@@ -2,77 +2,73 @@
 
 ## Project Description
 
-This project, the Purr-dictive Analytics Platform, aims to develop a robust platform capable of ingesting and processing large datasets to generate predictive insights using machine learning algorithms. Focusing initially on the Air Quality (New York City) dataset, the platform will forecast pollution levels and predict Air Quality Index (AQI). The platform is designed for scalability and reliability, leveraging containerization (Docker) for deployment on a chosen cloud provider (AWS/Azure/GCP) and utilizing PostgreSQL for efficient data storage.
+The **Purr-dictive Analytics Platform** aims to develop a scalable system capable of ingesting and processing large datasets to generate predictive insights using machine learning algorithms. Initially, the focus is on [**The Complete Pokémon Dataset**](https://www.kaggle.com/datasets/rounakbanik/pokemon/data), which provides data on over 800 Pokémon from the first seven generations, including base stats, types, and other categorical features. The platform will implement predictive models to classify Pokémon types and estimate overall strength based on their attributes. For scalability and reliability, the platform leverages containerization (Docker) for cloud deployment (AWS, Azure, or GCP) and utilizes PostgreSQL for efficient data storage.
 
 ## Technologies Used
 
-* **Programming Language:** Python
-* **AI/ML Libraries:** scikit-learn, TensorFlow/PyTorch
-* **Cloud Computing:** AWS/Azure/GCP
-* **Database:** PostgreSQL
-* **DevOps:** Docker
+- **Programming Language:** Python
+- **AI/ML Libraries:** scikit-learn, TensorFlow, PyTorch
+- **Cloud Providers:** AWS, Azure, GCP
+- **Database:** PostgreSQL
+- **DevOps Tools:** Docker
 
 ## Dataset
 
-* **Primary Dataset:** Air Quality (New York City)
+- **Primary Dataset:** [**The Complete Pokémon Dataset**](https://www.kaggle.com/datasets/rounakbanik/pokemon/data)
 
 ## Exploratory Data Analysis (EDA)
 
-Initial data exploration will focus on understanding the characteristics of the Air Quality dataset, including:
+Initial data exploration focuses on understanding the characteristics of the Pokémon dataset, including:
 
-* Examining trends in air pollution across different boroughs, seasons, and weather patterns.
-* Identifying correlations between air quality metrics and factors such as traffic volume, population density, and public health indicators.
+- Examining distributions of Pokémon attributes such as types, stats (HP, Attack, Defense, Speed, etc.), and generations.
+- Identifying correlations between features, exploring how type combinations and stat distributions influence overall strength.
 
 ## Model Training
 
 The platform will implement and train machine learning models to generate predictive insights:
 
-* Developing and training time-series models (e.g., ARIMA, LSTM) to forecast future pollution levels.
-* Training regression models to predict the Air Quality Index (AQI) based on relevant features like weather conditions, time of day/year, and traffic data.
+- **Classification Models:** Predict Pokémon primary/secondary types and legendary status based on attributes such as base stats and generation.
+- **Regression Models:** Estimate overall Pokémon strength (e.g., total base stats) using features like Attack, Defense, Speed, and special stats.
 
 ## Deployment
 
-The ultimate goal is to deploy the platform to provide valuable real-time information:
+The platform aims to deliver valuable interactive Pokémon analytics through:
 
-* Building a real-time dashboard that visualizes historical air quality data, displays current conditions, and presents predictive forecasts.
-* Implementing an alerting system based on predicted AQI levels to inform the public and relevant health authorities.
+- **Real-time Dashboard:** A web dashboard that visualizes Pokémon distributions (by type, generation, base stats) and displays model predictions for type classification and strength estimation, with interactive filters for browsing the dataset.
+- **RESTful API:** An API that accepts Pokémon attributes as input and returns predicted classifications (e.g., type, legendary status) or strength scores. The API supports integration with external applications and the dashboard.
+- **Containerized Deployment:** Using Docker to containerize the dashboard, API, and model components for consistent environments. Deployment will target a cloud provider (AWS, Azure, or GCP) to ensure scalability and high availability.
 
 ## Directory Structure
 
 ```
 purr_dictive_analytics/
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   └── processed/
 ├── notebooks/
-│   └── exploratory_data_analysis.ipynb
+│   └── exploratory_data_analysis.ipynb
 ├── models/
-│   ├── training/
-│   └── deployment/
+│   ├── training/
+│   └── deployment/
 ├── src/
-│   ├── data_processing/
-│   ├── model_training/
-│   └── api/
+│   ├── data_processing/
+│   ├── model_training/
+│   └── api/
 ├── tests/
-│   ├── data_processing/
-│   ├── model_training/
-│   └── api/
+│   ├── data_processing/
+│   ├── model_training/
+│   └── api/
 ├── docker/
-│   ├── Dockerfile
-│   └── docker-compose.yml
-├── requirements.txt
-├── README.md
-└──.gitignore
+│   ├── Dockerfile
+│   └── docker-compose.yml
+└── requirements.txt
 ```
 
-**Description of Directory Structure:**
+### Description of Directory Structure
 
-* `data/`: Stores the original (raw) and transformed (processed) datasets used for analysis and model training.
-* `notebooks/`: Contains Jupyter notebooks used for initial data exploration, visualization, and experimentation with different machine learning models.
-* `models/`: Houses the trained machine learning model files, along with scripts for training and deploying these models.
-* `src/`: Contains the main application code, organized into modules for data processing, model training pipelines, a RESTful API for accessing predictions, and utility functions.
-* `tests/`: Includes unit and integration tests for the various modules within the `src` directory to ensure code quality and reliability.
-* `docker/`: Contains the `Dockerfile` for containerizing the application and `docker-compose.yml` for managing multi-container deployments, facilitating portability and scalability.
-* `requirements.txt`: Lists all the Python dependencies required to run the application, ensuring reproducibility of the environment.
-* `README.md`: Provides a comprehensive overview of the project, including setup instructions, usage guidelines, and explanations of the architecture.
-* `.gitignore`: Specifies files and directories that should be excluded from version control, such as temporary files or sensitive data.
+- `data/`: Transformed (processed) datasets for analysis and model training.
+- `notebooks/`: Jupyter notebooks for exploratory data analysis and model experimentation.
+- `models/`: Trained machine learning models, including training and deployment scripts.
+- `src/`: Core application code organized into modules for data processing, model training, and API services.
+- `tests/`: Unit and integration tests for modules in the `src` directory, ensuring code quality.
+- `docker/`: Docker configuration files (`Dockerfile`, `docker-compose.yml`) for containerization and orchestration.
+- `requirements.txt`: Lists Python dependencies needed to run the project.
