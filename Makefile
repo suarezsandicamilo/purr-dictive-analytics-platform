@@ -9,3 +9,6 @@ install:
 
 download_data:
 	python3 src/data_processing/download_data.py
+
+clean_data:
+	python3 src/data_processing/clean_data.py
