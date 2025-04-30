@@ -43,6 +43,7 @@ The platform aims to deliver valuable interactive Pokémon analytics through:
 ```
 purr_dictive_analytics/
 ├── data/
+│   ├── raw/
 │   └── processed/
 ├── notebooks/
 │   └── exploratory_data_analysis.ipynb
@@ -65,7 +66,7 @@ purr_dictive_analytics/
 
 ### Description of Directory Structure
 
-- `data/`: Transformed (processed) datasets for analysis and model training.
+- `data/`: Original (raw) and transformed (processed) datasets for analysis and model training.
 - `notebooks/`: Jupyter notebooks for exploratory data analysis and model experimentation.
 - `models/`: Trained machine learning models, including training and deployment scripts.
 - `src/`: Core application code organized into modules for data processing, model training, and API services.
