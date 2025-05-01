@@ -11,6 +11,8 @@ PIP := $(VENV_DIR)/bin/pip
 setup:
 	rm -rf $(VENV_DIR)
 	python3 -m venv $(VENV_DIR)
+	@echo "Activate the virtual environment using:"
+	@echo "source $(VENV_DIR)/bin/activate"
 
 install:
 	$(PIP) install --upgrade pip

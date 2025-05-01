@@ -81,3 +81,59 @@ purr-dictive-analytics-platform/
 - `docker/`: Docker configuration files (`Dockerfile`, `docker-compose.yml`) for containerization and orchestration.
 - `Makefile`: Defines commands for common development tasks.
 - `requirements.txt`: Lists Python dependencies needed to run the project.
+
+## How to Build and Use
+
+Follow these steps to get the Purr-dictive Analytics Platform running locally:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/suarezsandicamilo/purr-dictive-analytics-platform.git
+   cd purr-dictive-analytics-platform
+   ```
+
+2. **Set up the environment and run the application:**
+
+- **Create the virtual environment and activate it:**
+
+  ```bash
+  make setup
+  source venv/bin/activate
+  ```
+
+- **Install dependencies:**
+
+  ```bash
+  make install
+  ```
+
+- **Process data:**
+
+  ```bash
+  make process
+  ```
+
+- **Train the model:**
+
+  ```bash
+  make train
+  ```
+
+- **Start the server:**
+
+  ```bash
+  make runserver
+  ```
+
+3.  **Access the application:**
+
+    Open your web browser and navigate to `http://localhost:8000` (or the port shown in the `make runserver` output).
+
+4.  **Interact with the platform:**
+
+    Enter the Pokémon stats into the web form and click "Predict Legendary Status" to see the prediction.
+
+### Screenshot
+
+![Screenshot](screenshots/screenshot.png)
