@@ -1,23 +1,33 @@
 #
 
+.PHONY: setup install download clean train runserver migrate
+
+VENV_DIR := venv
+
+PYTHON := $(VENV_DIR)/bin/python3
+
+PIP := $(VENV_DIR)/bin/pip
+
 setup:
-	rm -fr venv
-	python3 -m venv venv
+	rm -rf $(VENV_DIR)
+	python3 -m venv $(VENV_DIR)
 
 install:
-	pip install -r requirements.txt
+	source $(VENV_DIR)/bin/activate
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
 
-download_data:
-	python3 src/data_processing/download_data.py
+download:
+	$(PYTHON) src/data_processing/download_data.py
 
-clean_data:
-	python3 src/data_processing/clean_data.py
+clean:
+	$(PYTHON) src/data_processing/clean_data.py
 
-train_classification:
-	python3 src/model_training/train_classification.py
+train:
+	$(PYTHON) src/model_training/train_classification.py
 
 runserver:
-	python3 src/manage.py runserver
+	$(PYTHON) src/manage.py runserver
 
 migrate:
-	python3 src/manage.py migrate
+	$(PYTHON) src/manage.py migrate
