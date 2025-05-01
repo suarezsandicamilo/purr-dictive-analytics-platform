@@ -17,8 +17,10 @@ Including another URLconf
 
 from django.urls import path
 
-from app.views import PredictLegendaryView
+from app.views.index_view import index_view
+from app.views.predict_legendary_view import PredictLegendaryView
 
 urlpatterns = [
+    path('', index_view, name='index'),
     path('api/predict-legendary/', PredictLegendaryView.as_view(), name='predict_legendary'),
 ]

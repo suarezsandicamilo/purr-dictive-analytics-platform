@@ -18,3 +18,6 @@ train_classification:
 
 runserver:
 	python3 src/manage.py runserver
+
+migrate:
+	python3 src/manage.py migrate

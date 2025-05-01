@@ -1,15 +1,14 @@
-from django.shortcuts import render
+from django.conf import settings
 
 import os
 import torch
 
 from torch import nn
-from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .serializers import PokemonFeaturesSerializer
+from app.serializers import PokemonFeaturesSerializer
 
 model = nn.Sequential(
   nn.Linear(6, 16),
