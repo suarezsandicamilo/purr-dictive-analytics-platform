@@ -3,8 +3,8 @@
 const form = document.querySelector('#form');
 const resultDiv = document.querySelector('#result');
 const errorMessage = document.querySelector('#error-message');
-const probability = document.querySelector('#probability');
-const prediction = document.querySelector('#prediction');
+const probabilityP = document.querySelector('#probability');
+const predictionP = document.querySelector('#prediction');
 const submit = form.querySelector('#submit');
 
 /**
@@ -35,13 +35,11 @@ const fetchPrediction = async (data) => {
  * @param {object} result - The prediction result data.
  */
 const updateUI = (result) => {
-  const { is_legendary_probability, predicted_is_legendary } = result;
+  const { probability, prediction } = result;
 
   errorMessage.textContent = '';
-  probability.textContent = `${(is_legendary_probability * 100).toFixed(2)}%`;
-  prediction.textContent = predicted_is_legendary
-    ? 'Legendary'
-    : 'Not Legendary';
+  probabilityP.textContent = `${(probability * 100).toFixed(2)}%`;
+  predictionP.textContent = prediction ? 'Legendary' : 'Not Legendary';
 
   resultDiv.classList.remove('hidden');
 };
@@ -52,8 +50,8 @@ const updateUI = (result) => {
  */
 const showError = (message) => {
   errorMessage.textContent = `Error: ${message}`;
-  probability.textContent = '';
-  prediction.textContent = '';
+  probabilityP.textContent = '';
+  predictionP.textContent = '';
 
   errorMessage.classList.remove('hidden');
 };
