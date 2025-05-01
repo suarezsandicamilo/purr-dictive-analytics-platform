@@ -15,3 +15,6 @@ clean_data:
 
 train_classification:
 	python3 src/model_training/train_classification.py
+
+runserver:
+	python3 src/manage.py runserver

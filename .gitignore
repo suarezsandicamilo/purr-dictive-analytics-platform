@@ -1,6 +1,9 @@
 #
 
+__pycache__
 data
+models
 venv
 
-*.pth
+.env
+db.sqlite3
