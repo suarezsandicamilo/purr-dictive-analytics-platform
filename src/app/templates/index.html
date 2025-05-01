@@ -48,7 +48,7 @@
                 />
               </div>
               <div class="form-control">
-                <label for="sp_attack" class="text-sp-attack">Special Attack</label>
+                <label for="sp-attack" class="text-sp-attack">Special Attack</label>
                 <input
                   id="sp-attack"
                   name="sp_attack"
@@ -58,7 +58,7 @@
                 />
               </div>
               <div class="form-control">
-                <label for="sp_defense" class="text-sp-defense">Special Defense</label>
+                <label for="sp-defense" class="text-sp-defense">Special Defense</label>
                 <input
                   id="sp-defense"
                   name="sp_defense"
@@ -81,15 +81,11 @@
           </fieldset>
           <button id="submit" type="submit">Predict Legendary Status</button>
         </form>
+        <p id="error-message" class="hidden"></p>
         <div id="result" class="hidden">
-          <p id="error_message"></p>
-          <p>
-            <b>Legendary Status Probability</b>
-          </p>
+          <h2>Legendary Status Probability</h2>
           <p id="probability"></p>
-          <p>
-            <b>Legendary Status Prediction</b>
-          </p>
+          <h2>Legendary Status Prediction</h2>
           <p id="prediction"></p>
         </div>
       </section>

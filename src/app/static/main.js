@@ -1,7 +1,7 @@
 //
 
 const form = document.querySelector('#form');
-const result = document.querySelector('#result');
+const resultDiv = document.querySelector('#result');
 const errorMessage = document.querySelector('#error-message');
 const probability = document.querySelector('#probability');
 const prediction = document.querySelector('#prediction');
@@ -43,7 +43,7 @@ const updateUI = (result) => {
     ? 'Legendary'
     : 'Not Legendary';
 
-  result.classList.remove('hidden');
+  resultDiv.classList.remove('hidden');
 };
 
 /**
@@ -55,7 +55,7 @@ const showError = (message) => {
   probability.textContent = '';
   prediction.textContent = '';
 
-  result.classList.remove('hidden');
+  errorMessage.classList.remove('hidden');
 };
 
 /**
@@ -66,7 +66,7 @@ const onSubmit = async (event) => {
   event.preventDefault();
   submit.disabled = true;
   submit.textContent = 'Predicting...';
-  result.classList.add('hidden');
+  resultDiv.classList.add('hidden');
   errorMessage.textContent = '';
 
   const formData = new FormData(form);
