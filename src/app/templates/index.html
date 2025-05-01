@@ -18,58 +18,80 @@
       <p class="subtitle">
         Enter the stats of a Pokémon to predict if it's legendary
       </p>
-      <div class="card">
-        <h3 class="card-title">Pokémon Stats</h3>
+      <section class="card">
         <form id="form">
-          <div class="form-grid">
-            <div class="form-control">
-              <label for="hp" class="text-red">HP</label>
-              <input id="hp" name="hp" type="number" value="100" />
+          <fieldset class="form-fieldset">
+            <legend class="card-title">Pokémon Stats</legend>
+            <div class="form-grid">
+              <div class="form-control">
+                <label for="hp" class="text-hp">HP</label>
+                <input id="hp" name="hp" type="number" value="100" required />
+              </div>
+              <div class="form-control">
+                <label for="attack" class="text-attack">Attack</label>
+                <input
+                  id="attack"
+                  name="attack"
+                  type="number"
+                  value="100"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="defense" class="text-defense">Defense</label>
+                <input
+                  id="defense"
+                  name="defense"
+                  type="number"
+                  value="100"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="sp_attack" class="text-sp-attack">Special Attack</label>
+                <input
+                  id="sp_attack"
+                  name="sp_attack"
+                  type="number"
+                  value="100"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="sp_defense" class="text-sp-defense">Special Defense</label>
+                <input
+                  id="sp_defense"
+                  name="sp_defense"
+                  type="number"
+                  value="100"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="speed" class="text-speed">Speed</label>
+                <input
+                  id="speed"
+                  name="speed"
+                  type="number"
+                  value="100"
+                  required
+                />
+              </div>
             </div>
-            <div class="form-control">
-              <label for="attack" class="text-orange">Attack</label>
-              <input id="attack" name="attack" type="number" value="100" />
-            </div>
-            <div class="form-control">
-              <label for="defense" class="text-yellow">Defense</label>
-              <input id="defense" name="defense" type="number" value="100" />
-            </div>
-            <div class="form-control">
-              <label for="sp_attack" class="text-blue"
-                >Special Attack</label
-              >
-              <input
-                id="sp_attack"
-                name="sp_attack"
-                type="number"
-                value="100"
-              />
-            </div>
-            <div class="form-control">
-              <label for="sp_defense" class="text-green"
-                >Special Defense</label
-              >
-              <input
-                id="sp_defense"
-                name="sp_defense"
-                type="number"
-                value="100"
-              />
-            </div>
-            <div class="form-control">
-              <label for="speed" class="text-purple">Speed</label>
-              <input id="speed" name="speed" type="number" value="100" />
-            </div>
-          </div>
-          <button class="submit" type="submit">Predict Legendary Status</button>
+          </fieldset>
+          <button id="submit" type="submit">Predict Legendary Status</button>
         </form>
         <div id="result" class="hidden">
-          <h4>Legendary Status Probability</h4>
+          <p>
+            <b>Legendary Status Probability</b>
+          </p>
           <p id="probability"></p>
-          <h4>Legendary Status Prediction</h4>
+          <p>
+            <b>Legendary Status Prediction</b>
+          </p>
           <p id="prediction"></p>
         </div>
-      </div>
+      </section>
     </div>
     <script src="/static/main.js"></script>
   </body>
