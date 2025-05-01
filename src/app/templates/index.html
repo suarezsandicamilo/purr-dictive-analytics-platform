@@ -50,7 +50,7 @@
               <div class="form-control">
                 <label for="sp_attack" class="text-sp-attack">Special Attack</label>
                 <input
-                  id="sp_attack"
+                  id="sp-attack"
                   name="sp_attack"
                   type="number"
                   value="100"
@@ -60,7 +60,7 @@
               <div class="form-control">
                 <label for="sp_defense" class="text-sp-defense">Special Defense</label>
                 <input
-                  id="sp_defense"
+                  id="sp-defense"
                   name="sp_defense"
                   type="number"
                   value="100"
@@ -82,6 +82,7 @@
           <button id="submit" type="submit">Predict Legendary Status</button>
         </form>
         <div id="result" class="hidden">
+          <p id="error_message"></p>
           <p>
             <b>Legendary Status Probability</b>
           </p>
