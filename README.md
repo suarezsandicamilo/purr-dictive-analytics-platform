@@ -7,10 +7,13 @@ The **Purr-dictive Analytics Platform** aims to develop a scalable system capabl
 ## Technologies Used
 
 - **Programming Language:** Python
-- **AI/ML Libraries:** scikit-learn, TensorFlow, PyTorch
+- **AI/ML Libraries:** PyTorch, pandas, scikit-learn
 - **Cloud Providers:** AWS, Azure, GCP
 - **Database:** PostgreSQL
 - **DevOps Tools:** Docker
+- **Web Framework:** Django, Django REST Framework
+- **Frontend:** HTML, CSS, JavaScript
+- **Data Handling:** kagglehub, pandas, matplotlib, seaborn
 
 ## Dataset
 
@@ -34,14 +37,14 @@ The platform will implement and train machine learning models to generate predic
 
 The platform aims to deliver valuable interactive Pokémon analytics through:
 
-- **Real-time Dashboard:** A web dashboard that visualizes Pokémon distributions (by type, generation, base stats) and displays model predictions for type classification and strength estimation, with interactive filters for browsing the dataset.
-- **RESTful API:** An API that accepts Pokémon attributes as input and returns predicted classifications (e.g., type, legendary status) or strength scores. The API supports integration with external applications and the dashboard.
+- **Web Interface:** A Django-served HTML page allows users to input Pokémon stats. JavaScript fetches predictions asynchronously.
+- **RESTful API:** A Django REST Framework API endpoint (`/api/predict-legendary/`) accepts Pokémon stats (POST request) and returns the predicted legendary status and probability.
 - **Containerized Deployment:** Using Docker to containerize the dashboard, API, and model components for consistent environments. Deployment will target a cloud provider (AWS, Azure, or GCP) to ensure scalability and high availability.
 
 ## Directory Structure
 
 ```
-purr_dictive_analytics/
+purr-dictive-analytics-platform/
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -53,7 +56,10 @@ purr_dictive_analytics/
 ├── src/
 │   ├── data_processing/
 │   ├── model_training/
-│   └── api/
+│   └── app/
+│       ├── static/
+│       ├── templates/
+│       └── views/
 ├── tests/
 │   ├── data_processing/
 │   ├── model_training/
@@ -61,6 +67,7 @@ purr_dictive_analytics/
 ├── docker/
 │   ├── Dockerfile
 │   └── docker-compose.yml
+├── Makefile
 └── requirements.txt
 ```
 
@@ -72,4 +79,5 @@ purr_dictive_analytics/
 - `src/`: Core application code organized into modules for data processing, model training, and API services.
 - `tests/`: Unit and integration tests for modules in the `src` directory, ensuring code quality.
 - `docker/`: Docker configuration files (`Dockerfile`, `docker-compose.yml`) for containerization and orchestration.
+- `Makefile`: Defines commands for common development tasks.
 - `requirements.txt`: Lists Python dependencies needed to run the project.
